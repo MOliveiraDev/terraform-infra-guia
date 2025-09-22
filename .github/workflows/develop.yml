@@ -15,6 +15,6 @@ jobs:
     with:
       environment: dev
       aws-assume-role-arn: "arn:aws:iam::812982728974:role/github-actions-MOliveiraDev"
-      aws-region: "sa-east-2"
+      aws-region: "us-east-2"
       aws-statefile-s3-bucket: "moliveiradev-us-east-2-statefile"
       aws-lock-dynamodb-table: "moliveiradev-us-east-2-terraform-lock"

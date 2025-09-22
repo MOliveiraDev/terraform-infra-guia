@@ -1,0 +1,20 @@
+name: "PROD DEPLOY"
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform:
+    uses: ./.github/workflows/terraform.yml
+    with:
+      environment: prod
+      aws-assume-role-arn: "arn:aws:iam::812982728974:role/github-actions-MOliveiraDev"
+      aws-region: "us-east-2"
+      aws-statefile-s3-bucket: "moliveiradev-us-east-2-statefile"
+      aws-lock-dynamodb-table: "moliveiradev-us-east-2-terraform-lock"
